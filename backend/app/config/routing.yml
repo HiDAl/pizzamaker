@@ -1,0 +1,4 @@
+pizza_maker:
+    resource: "@PizzaMakerBundle/Controller/"
+    type:     annotation
+    prefix:   /api

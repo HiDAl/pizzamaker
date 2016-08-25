@@ -1,4 +1,4 @@
-pizza_maker:
-    resource: "@PizzaMakerBundle/Controller/"
-    type:     annotation
+pizza_maker_api:
+    type:     rest
+    resource: "@PizzaMakerBundle/Resources/config/api-routing.yml"
     prefix:   /api

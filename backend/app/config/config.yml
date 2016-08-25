@@ -20,6 +20,8 @@ framework:
     trusted_proxies: ~
     session:         false
     fragments:       ~
+    serializer:
+        enabled: true
 
 # Twig Configuration
 twig:
@@ -51,8 +53,8 @@ doctrine:
         password: %database_password%
         charset:  UTF8
         # if using pdo_sqlite as your database driver, add the path in parameters.yml
-        # e.g. database_path: %kernel.root_dir%/data/data.db3
-        path:     %database_path%
+        # e.g. database_path:
+        path:     %kernel.root_dir%/data/data.db3
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
@@ -70,7 +72,7 @@ fos_rest:
             json: true
     format_listener:
         rules:
-            - { path: ^/, priorities: [ json ], fallback_format: json, prefer_extension: true }
+            - { path: ^/api, priorities: [ json ], fallback_format: json, prefer_extension: true }
     versioning:
         enabled: true
         resolvers:
@@ -93,7 +95,7 @@ fos_http_cache:
             # the controls section values are used in a call to Response::setCache();
             -
                 match:
-                    path: ^/notes
+                    path: ^/api
                     methods: [GET, HEAD]
                 headers:
                     cache_control: { public: true, max_age: 15, s_maxage: 30 }

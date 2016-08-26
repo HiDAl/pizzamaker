@@ -1,6 +1,6 @@
 # Project
 
-The project is divided in two parts `backend` (a symfony project) and `frontend` (an Angular project):
+The project is divided in two parts `backend` (a symfony REST API project) and `frontend` (an Angular project):
 
 ## Backend
 

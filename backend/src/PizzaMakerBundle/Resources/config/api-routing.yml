@@ -2,3 +2,8 @@ pizza_maker_api_ingredients:
     type: rest
     resource: "@PizzaMakerBundle/Controller/IngredientController.php"
     name_prefix: api_ingredients_
+
+pizza_maker_api_pizzas:
+    type: rest
+    resource: "@PizzaMakerBundle/Controller/PizzaController.php"
+    name_prefix: api_pizzas_

@@ -66,6 +66,11 @@ class IngredientController extends FOSRestController {
         return "";
     }
 
+    public function deleteIngredientAction(Ingredient $ingredient) {
+        $manager = $this->getDoctrine()->getManager();
+        $manager->remove($ingredient);
+        $manager->flush();
+    }
 
     private function fillAndValidate(Ingredient $ingredient, Request $request) {
         $form = $this->createForm(

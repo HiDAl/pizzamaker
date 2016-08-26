@@ -1,0 +1,29 @@
+<div >
+  <h1>Our Ingredients! <a ui-sref="newIngredient" class="btn btn-success btn-lg pull-right">add Ingredient!</a></h1>
+
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="ingredient in ingredients">
+        <td>{{ingredient.name}}</td>
+        <td>€ {{ingredient.price}}</td>
+        <td>
+          <a ui-sref="editIngredient({id: ingredient.id})">edit</a>
+          <span> | </span>
+          <a ng-click="delete(ingredient)">delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a ui-sref="newIngredient" class="btn btn-success btn-lg pull-right">add Ingredient!</a>
+
+  <br>
+</div>

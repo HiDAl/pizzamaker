@@ -1,0 +1,33 @@
+<div >
+  <h1>Our Pizzas   <a ui-sref="newPizza" class="btn btn-success btn-lg pull-right success">Create a Pizza!</a></h1>
+
+
+
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ingredients</th>
+        <th>Price</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="pizza in pizzas">
+        <td>{{pizza.name}}</td>
+        <td>
+          <ul>
+            <li ng-repeat="ingredient in pizza.ingredients">{{ingredient.name}} - € {{ingredient.price}}</li>
+          </ul>
+        </td>
+        <td>€ {{pizza.price}}</td>
+        <td>
+            <a ui-sref="editPizza({id: pizza.id})">edit</a>
+            <span> | </span>
+            <a ng-click="delete(pizza)">delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a ui-sref="newPizza" class="btn btn-success btn-lg  pull-right success">Create a Pizza!</a>
+</div>

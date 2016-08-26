@@ -1,0 +1,20 @@
+<div class="form-group">
+  <label for="name" class="col-sm-2 control-label">Name</label>
+  <div class="col-sm-10">
+    <input type="text" ng-model="pizza.name" class="form-control" id="name" placeholder="Pizza Name"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="ingredients" class="col-sm-2 control-label">Name</label>
+  <div class="col-sm-10">
+    <select name="ingredients" id="ingredients" multiple ng-options="ingredient.name for ingredient in ingredients track by ingredient.id" ng-model="pizza.ingredients">
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <input type="submit" class="btn btn-primary" value="Save"/>
+  </div>
+</div>
